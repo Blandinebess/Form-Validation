@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Validation</title>
+</head>
+<body>
+   <style>
+    input:valid { border: 2px solid green; }
+    input:invalid { border: 2px solid red; }
+</style>
+<form>
+    <label for="username">Username:</label>
+    <input id="username" type="text" minlength="5" required>
+    <button type="submit">Submit</button>
+     <!-- Email Field -->
+        <label for="email">Email:</label>
+        <input id="email" type="email" required>
+        <br>
+
+        <!-- Password Field -->
+        <label for="password">Password (min 8 characters):</label>
+        <input id="password" type="password" minlength="8" required>
+        <br>
+
+        <!-- Number Range Field -->
+        <label for="age">Age (between 15 and 75):</label>
+        <input id="age" type="number" min="15" max="75" required>
+        <br>
+
+        <!-- Required Checkbox -->
+        <label>
+            <input type="checkbox" required> I agree to the terms and conditions
+        </label>
+        <br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+</form>
+ <script>
+    function validateUsername() {
+        const username = document.getElementById('js-username');
+        const error = document.getElementById('error-message');
+        if (username.value.length < 5) {
+            error.textContent = "Username must be at least 5 characters.";
+            username.style.borderColor = "red";
+        } else {
+            error.textContent = "";
+            username.style.borderColor = "green";
+        }
+    }
+</script>
+    
+</body>
+</html>
