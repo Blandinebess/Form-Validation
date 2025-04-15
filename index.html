@@ -13,7 +13,6 @@
 <form>
     <label for="username">Username:</label>
     <input id="username" type="text" minlength="5" required>
-    <button type="submit">Submit</button>
      <!-- Email Field -->
         <label for="email">Email:</label>
         <input id="email" type="email" required>
@@ -39,7 +38,8 @@
         <button type="submit">Submit</button>
 </form>
  <script>
-    function validateUsername() {
+    
+   function validateUsername(event) { event.preventDefault(); // Prevent form submission
         const username = document.getElementById('js-username');
         const error = document.getElementById('error-message');
         if (username.value.length < 5) {
